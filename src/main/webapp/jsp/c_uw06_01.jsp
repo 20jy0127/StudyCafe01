@@ -53,7 +53,7 @@
 					</ul>
 				</li>
 				<li><a href="c_uw06_01.jsp">予約する</a></li>
-				<li><a href="xxx.html">定期券購入</a></li>
+				<li><a href="c_uw09_01.jsp">定期券購入</a></li>
 				<li><a href="xxx.html">定期券継続</a></li>
 			</ul>
 		</div>

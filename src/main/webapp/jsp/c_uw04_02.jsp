@@ -83,26 +83,28 @@
              <!-- メイン表示のボディー部分(main_body)  -->
             <div id="main_body">
                 <form method="post" action="">
-                    <table>
-                        <tr>
-                            <td>メールアドレス：</td><td><%//cust.getEmail()%></td>
-                        </tr>
-                        <tr>
-                            <td>名前：</td><td><%//cust.getCustName()%></td>
-                        </tr>
-                        <tr>
-                            <td>パスワード：</td><td>※セキュリティ保護のため表示していません。</td>
-                        </tr>
-                        <tr>
-                            <td>電話番号：</td><td><%= tableData[3] %></td>
-                        </tr>
-                        <tr>
-                            <td>生年月日：</td><td><%= tableData[4] %></td>
-                        </tr>
-                        <tr>
-                        	
-                            <td>性別：</td><td><%= sex %></td>
-                        </tr>
+                	<table>
+                	<%
+                	for(int i=0 ; i<tableData.length ; i++){
+                		out.print("<tr>");
+                		
+                		// 条件：パスワード表示の番であるかどうか
+                		if(i==2){
+                			// 真ならパスワード表示なので、パスワードコードだけ、"セキュリティ保護のため表示していません。"というメッセージで置換する
+                    		out.print("<td>" + tableData_sub[i] + "：</td><td>※セキュリティ保護のため表示していません。");
+                		// 条件：性別表示の番であるかどうか
+                		}else if(i==5){
+                			// 真なら性別表示なので、String型1or-1の性別を、男か女かを表示できるようなコードを書く
+                			tableData[i] = tableData[i].equals("1") ? "男" : "女";
+                			out.print("<td>" + tableData_sub[i] + "：</td>");
+                    		out.print("<td>" + tableData[i] + "</td>");
+                		}else{
+                    		out.print("<td>" + tableData_sub[i] + "：</td>");
+                    		out.print("<td>" + tableData[i] + "</td>");
+                		}
+                		out.print("</tr>");
+                	}
+                	%>
                     </table>
                     <div id="main_subnmit">
                         <p><input type="submit" value="確認完了" class="submit"></p>

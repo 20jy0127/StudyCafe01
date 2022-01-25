@@ -85,19 +85,19 @@
             		for(int i=0 ; i<tableData.length ; i++){
             			out.print("<table class='rsvHistory_01'>");
             			for(int index : tableData_index){
-            				// 条件：定期券コードの表示であるかどうか
+            				// 条件：定期券コードの表示の番であるかどうか
             				if(index == 0){
-            					// 真なら、定期券コードに定期券継続サーブレット(c_uw10_02.servlet)に遷移させたいので
-            					// リンクを付与するコードを書く
+            					// 真なら、「定期券コード」に定期券継続サーブレット(c_uw10_02.servlet)に遷移させるためのリンクを付与するコードを書く
             					out.print("<tr>");
                 				out.print("<td><a href='c_uw10_02'>" + tableData_sub[index] + "</a>：</td>");
                 				out.print("<td>" + tableData[i][index] + "</td>");
                 				out.print("</tr>");
+            				}else{
+            					out.print("<tr>");
+                				out.print("<td>" + tableData_sub[index] + "：</td>");
+                				out.print("<td>" + tableData[i][index] + "</td>");
+                				out.print("</tr>");
             				}
-            				out.print("<tr>");
-            				out.print("<td>" + tableData_sub[index] + "：</td>");
-            				out.print("<td>" + tableData[i][index] + "</td>");
-            				out.print("</tr>");
             			}
             			out.print("</table>"); 
             	    }

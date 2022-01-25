@@ -34,6 +34,7 @@
 	ArrayList<String> shopNumArray = new ArrayList<String>();
 	shopNumArray.add("0001");
 	shopNumArray.add("0003");
+	// 店舗が東京にしかない場合
 	String[][] tableData  = new String[][]{
 		{"202020" , "西新宿店" , "01" , "東京都"},// [0]"店舗コード" , [1]"店舗名" , [2]"都道府県番号" , [3]"都道府県名"
 		{"202021" , "東新宿店" , "01" , "東京都"},
