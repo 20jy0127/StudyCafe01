@@ -90,44 +90,26 @@
                 <h3>店舗選択</h3>
                 <div id="search">
                     <div id="search_01">
-                        <form method="post" action="c_uw09_01"></form>
-                            <table>
-                                <tr>
-                                    <td>都道府県：</td>        
-                                    <td>
-                                        <select name="cityName">
-                                        	<option value="" selected>都道府県を選択</option>
-                                        	<%
-                                        	
-                                        	for(int i = 0;i<tableData.length;i++ ){
-                                        		out.print("<option value=" + tableData[i][3] + ">" + tableData[i][3] + "</option>");
-                                        	}
-                                        	%>
-                                            </select>
-                                    </td>
-                                    <td><input type="submit" value="検索"></td>
-                                </tr>
-                            </table>
-                        </form>
+	                    <table>
+	                        <tr>
+	                            <td>都道府県：</td>        
+	                            <td>
+	                                <select name="cityName">
+	                                	<option value="" selected>都道府県を選択</option>
+	                                	<%
+	                                	
+	                                	for(int i = 0;i<tableData.length;i++ ){
+	                                		out.print("<option value=" + tableData[i][3] + ">" + tableData[i][3] + "</option>");
+	                                	}
+	                                	%>
+	                                    </select>
+	                            </td>
+	                            <td><input type="submit" value="検索" onclick='method_search02('tableData');'></td>
+	                        </tr>
+	                    </table>
                     </div>
+                    <div id="search_02"></div>
                     
-                    <%
-                    if(cityName != null){%>
-                    	<%="<!-- 店舗選択フォーム部分 -->" %>
-                    	<%="<div id='search_02'>" %>
-                    	<%="<h3>検索結果</h3>" %>
-                    	<%="<table>" %>
-                    	<%
-                    	for(int i=0 ; i<tableData.length ; i++){
-                    		if(cityName.equals(tableData[i][3])){
-                    			out.print("<tr><td><a href='xxx.java?index='" + i + "'>" + shopNameArray.get(i) + "</a></td></tr>");
-                    		}
-                    		
-                    	}
-        				%>
-                    	<%="</table>" %>
-                    	<%="</div>" %>
-                    <%}%>
                 </div>
             </div>
 		</div>
@@ -138,5 +120,6 @@
 </div>
 <script src = "../js/default.js" cherset = "UTF-8"></script>
 <script src = "../js/c_uw06_01.js" cherset = "UTF-8"></script>
+<script src = "../js/c_uw09_01.js" cherset = "UTF-8"></script>
 </body>
 </html>
